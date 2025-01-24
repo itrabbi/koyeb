@@ -1,6 +1,5 @@
 requests
 telebot
-random
 os
 json
 names
