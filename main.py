@@ -24,15 +24,18 @@ from random_user import geninfo
 from mchk import new_func, get_response_mchk
 import time
 from pymongo import MongoClient
+from dotenv import load_dotenv
 
+load_dotenv()
 # Initialize the bot with your token
-tok = "7825415593:AAEE4vR-vGj-vzsb_6fjBIl9vV78ZozPBes"
+tok = os.getenv("TELEGRAM_BOT_TOKEN")
+
 bot = telebot.TeleBot(tok)
 admin_username = "@rabbisudo"
 admin_id = [6355601354, 7679832065]  # Add as many IDs as you want
 
 # Construct the MongoDB URI
-MONGO_URI = "mongodb+srv://yoogovip:Hpren5jvF_NaGYa@cluster0.qa6a4.mongodb.net"
+MONGO_URI = os.getenv("MONGO_URI")
 
 # Connect to MongoDB
 try:

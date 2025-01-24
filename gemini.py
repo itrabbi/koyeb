@@ -1,8 +1,11 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Gemini API URL (replace with your actual endpoint)
-GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDLhfGGtMCkg8njCx_Sc6WzZn0Py1bkUsU"
+GEMINI_API_URL =  os.getenv("GEMINI_API_URL")
 
 def gem(gem, id, usertele):
     headers = {
