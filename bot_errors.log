@@ -332,3 +332,14 @@ Traceback (most recent call last):
     raise ApiTelegramException(method_name, result, result_json)
 telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: message to delete not found
 
+2025-01-24 11:16:37,470 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-24 11:16:37,471 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-24 11:16:47,408 - INFO - 192.168.31.81 - - [24/Jan/2025 11:16:47] "[33mGET / HTTP/1.1[0m" 404 -
+2025-01-24 11:16:47,538 - INFO - 192.168.31.81 - - [24/Jan/2025 11:16:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-24 11:17:04,530 - INFO - 192.168.31.81 - - [24/Jan/2025 11:17:04] "GET /health HTTP/1.1" 200 -
+2025-01-24 11:17:06,346 - INFO - 192.168.31.81 - - [24/Jan/2025 11:17:06] "GET /health HTTP/1.1" 200 -
+2025-01-24 11:17:06,576 - INFO - 192.168.31.81 - - [24/Jan/2025 11:17:06] "GET /health HTTP/1.1" 200 -
+2025-01-24 11:17:06,792 - INFO - 192.168.31.81 - - [24/Jan/2025 11:17:06] "GET /health HTTP/1.1" 200 -

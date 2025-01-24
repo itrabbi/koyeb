@@ -1381,4 +1381,6 @@ Yoo Go↯ 𝖧𝖺𝗌 𝗉𝗅𝖾𝗇𝗍𝗒 𝗈𝖿 𝖢𝗈𝗆𝗆𝖺�
                 parse_mode="html",disable_web_page_preview=True,  reply_markup=key,
             )
     
-bot.polling(True)
+def start_bot():
+    print("Bot is running...")
+    bot.polling(non_stop=True)
