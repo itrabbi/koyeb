@@ -648,9 +648,39 @@ Yoo Go↯ 𝖧𝖺𝗌 𝗉𝗅𝖾𝗇𝗍𝗒 𝗈𝖿 𝖢𝗈𝗆𝗆𝖺�
                 reply_markup=key,
             )
 
-
-
-
+    elif "/gem" in text: 
+        if is_user_registered(user_id):
+            try:
+                ge = text.replace("/gem", "").strip() 
+                if not ge:
+                    bot.reply_to(message, "<strong>Please provide a prompt.</strong>", parse_mode="html", disable_web_page_preview=True)
+                else:
+                    loading_message = bot.reply_to(
+                        message, 
+                        "<code>Processing your request...</code>", 
+                        parse_mode="html", 
+                        disable_web_page_preview=True
+                    )
+                    send = gem(ge, id, user)
+                    bot.edit_message_text(
+                        chat_id=loading_message.chat.id,
+                        message_id=loading_message.message_id,
+                        text=send,
+                        parse_mode="html",
+                        disable_web_page_preview=True
+                    )
+            except Exception as e:
+                print(f"Error: {e}")
+        else:
+            key = types.InlineKeyboardMarkup()
+            b1 = types.InlineKeyboardButton(text="REGISTER", url="https://t.me/YooGoXbot?start=register")
+            key.add(b1)
+            bot.send_message(
+                message.chat.id,
+                text=f"<strong>You are an Unregistered User.\n\nClick Below Register Button to Register.</strong>",
+                parse_mode="HTML", 
+                reply_markup=key,
+            )
 
     elif "/ip" in text:
         if is_user_registered(user_id):

@@ -343,3 +343,181 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 2025-01-24 11:17:06,346 - INFO - 192.168.31.81 - - [24/Jan/2025 11:17:06] "GET /health HTTP/1.1" 200 -
 2025-01-24 11:17:06,576 - INFO - 192.168.31.81 - - [24/Jan/2025 11:17:06] "GET /health HTTP/1.1" 200 -
 2025-01-24 11:17:06,792 - INFO - 192.168.31.81 - - [24/Jan/2025 11:17:06] "GET /health HTTP/1.1" 200 -
+2025-01-24 12:21:31,143 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-24 12:21:31,144 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-24 12:41:19,802 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-24 12:41:19,803 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-24 12:43:22,134 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-24 12:43:22,136 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-24 12:46:56,684 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-24 12:46:56,686 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-24 12:49:26,735 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-24 12:49:26,736 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-24 12:52:18,151 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-24 12:52:18,152 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-24 12:52:36,165 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
+2025-01-24 12:52:36,167 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 9040, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "C:\Projects\koyeb\main.py", line 114, in run
+    register_user(message)
+    ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Projects\koyeb\main.py", line 165, in register_user
+            bot.send_message(
+            ~~~~~~~~~~~~~~~~^
+                channel_id,
+                ^^^^^^^^^^^
+    ...<2 lines>...
+                parse_mode="html",
+                ^^^^^^^^^^^^^^^^^^
+            )
+            ^
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1780, in send_message
+    apihelper.send_message(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        self.token, chat_id, text,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        reply_parameters=reply_parameters, link_preview_options=link_preview_options, business_connection_id=business_connection_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        message_effect_id=message_effect_id, allow_paid_broadcast=allow_paid_broadcast))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 275, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
+
+2025-01-24 12:59:53,452 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-24 12:59:53,453 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-24 13:00:06,013 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
+2025-01-24 13:00:06,020 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 9040, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "C:\Projects\koyeb\main.py", line 114, in run
+    register_user(message)
+    ~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Projects\koyeb\main.py", line 165, in register_user
+            bot.send_message(
+            ~~~~~~~~~~~~~~~~^
+                channel_id,
+                ^^^^^^^^^^^
+    ...<2 lines>...
+                parse_mode="html",
+                ^^^^^^^^^^^^^^^^^^
+            )
+            ^
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1780, in send_message
+    apihelper.send_message(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        self.token, chat_id, text,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        reply_parameters=reply_parameters, link_preview_options=link_preview_options, business_connection_id=business_connection_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        message_effect_id=message_effect_id, allow_paid_broadcast=allow_paid_broadcast))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 275, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\rabbi\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
+
+2025-01-25 09:45:04,722 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 09:45:04,723 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 09:47:26,586 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 09:47:26,587 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 09:49:35,994 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 09:49:35,994 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 09:53:35,269 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 09:53:35,270 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 09:55:02,331 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 09:55:02,332 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 10:03:44,009 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 10:03:44,010 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 10:07:03,002 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 10:07:03,003 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 10:09:38,609 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 10:09:38,610 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 10:10:41,210 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 10:10:41,211 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 10:14:46,544 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 10:14:46,545 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-25 10:21:13,843 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.31.81:8080
+2025-01-25 10:21:13,844 - INFO - [33mPress CTRL+C to quit[0m
