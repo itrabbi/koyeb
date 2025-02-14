@@ -56,7 +56,7 @@ def bin(bin, id, usertele):
     return tele
 
 
-def bincc(bin, id, usertele):
+def bincc(bin, id):
     try:
         gbin = bin
         x1 = gbin[0]
@@ -102,7 +102,5 @@ def bincc(bin, id, usertele):
 <b>↯ Info</b> ⌁ <code>{scheme}-{type}</code>
 <b>↯ Country</b> ⌁ <code>{country}</code>
 <b>↯ Issuer</b> ⌁ <code>{issuer}</code>\n
-↯ ReqBy ⌁ @{usertele} 
-↯ DevBy ⌁ @rabbisudo
 </strong>"""
     return tele

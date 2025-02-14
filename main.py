@@ -1,5 +1,6 @@
-import requests, telebot, random
-from telebot import types
+import requests
+import telebot
+import random
 import json
 import os
 import logging
@@ -25,14 +26,28 @@ from mchk import new_func, get_response_mchk
 import time
 from pymongo import MongoClient
 from dotenv import load_dotenv
+from flask import Flask
 
 load_dotenv()
+
 # Initialize the bot with your token
 tok = os.getenv("TELEGRAM_BOT_TOKEN")
-
 bot = telebot.TeleBot(tok)
+
 admin_username = "@rabbisudo"
 admin_id = [6355601354, 7679832065]  # Add as many IDs as you want
+
+# Flask application setup
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running okay", 200
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    return "OK", 200
+
 
 # Construct the MongoDB URI
 MONGO_URI = os.getenv("MONGO_URI")
@@ -1031,7 +1046,8 @@ Yoo Go↯ 𝖧𝖺𝗌 𝗉𝗅𝖾𝗇𝗍𝗒 𝗈𝖿 𝖢𝗈𝗆𝗆𝖺�
 
     elif "/chfree" in text or "/chfree" in text:
         card = text.split(" ")[1]
-        bininfo = bincc(card, id, user)
+        bininfo = bincc(bin, id)
+        print(bin, id)
         for i in range(1):
             cc = card.split("|")[0]
             exp = card.split("|")[1]
@@ -1411,6 +1427,16 @@ Yoo Go↯ 𝖧𝖺𝗌 𝗉𝗅𝖾𝗇𝗍𝗒 𝗈𝖿 𝖢𝗈𝗆𝗆𝖺�
                 parse_mode="html",disable_web_page_preview=True,  reply_markup=key,
             )
     
+# Start polling for the Telegram bot
 def start_bot():
-    print("Bot is running...")
-    bot.polling(non_stop=True)
+    bot.polling(True)
+
+if __name__ == "__main__":
+    from threading import Thread
+
+    # Start the Flask web server in a separate thread
+    flask_thread = Thread(target=app.run, kwargs={'host': '0.0.0.0', 'port': 5000})
+    flask_thread.start()
+
+    # Start the Telegram bot
+    start_bot()
